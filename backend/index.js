@@ -9,8 +9,13 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://prep-sphere-frontend.vercel.app/'],
-  credentials: true
+  origin: [
+    'http://localhost:5173',  // For local development
+    'https://prep-sphere-frontend.vercel.app'  // Your production frontend
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 
