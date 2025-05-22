@@ -90,7 +90,7 @@ function InterviewPage() {
           return;
         }
         
-        const response = await axios.post('http://localhost:5000/api/get-question', {
+        const response = await axios.post('https://prep-sphere-backend.vercel.app/api/get-question', {
           topic,
           questionIndex: currentQuestionIndex
         });
@@ -171,7 +171,7 @@ function InterviewPage() {
       
       console.log("Submitting answer:", transcript);
       
-      const response = await axios.post('http://localhost:5000/api/submit-answer', {
+      const response = await axios.post('https://prep-sphere-backend.vercel.app/api/submit-answer', {
         topic,
         question,
         answer: transcript
